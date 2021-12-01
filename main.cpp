@@ -7,89 +7,100 @@ using namespace std;
 
 int main() {
     int correct;
+    int i;
 
+    vector<string> g0 = {
+        "01",
+        "00"
+    };
+    vector<int> a0 = {0,2,3};
 
-    // vector<double> v0 = {4, 901921, 2, -1290, 8.3, 9.1, 18};
-    // vector<double> v1 = {};
-    // vector<double> v2 = {1};
-    // vector<double> v3 = {-9, 9, 8, -8, -7, 7, 6, -6, 5, -5, -4, 4, 3, -3, 2, -2, 1, -1, 0.01, -0.01};
-    // vector<double> v4 = {-9, 9, 8, -8, -7, 7, 6, -6, 5, -5, -4, 4, 3, -3, 2, -2, 1, -1, 0.01, -0.01, -9, 9, 8, -8, -7, 7, 6, -6, 5, -5, -4, 4, 3, -3, 2, -2, 1, -1, 0.01, -0.01, -9, 9, 8, -8, -7, 7, 6, -6, 5, -5, -4, 4, 3, -3, 2, -2, 1, -1, 0.01, -0.01, -9, 9, 8, -8, -7, 7, 6, -6, 5, -5, -4, 4, 3, -3, 2, -2, 1, -1, 0.01, -0.01};
+    vector<string> g1 = {
+        "010001",
+        "010101",
+        "010101",
+        "000000"
+    };
+    vector<int> a1 = {0,6,12,18,19,20,21,22,23};
 
-    // vector< vector<double> > all;
-    // all.push_back(v0);
-    // all.push_back(v1);
-    // all.push_back(v2);
-    // all.push_back(v3);
-    // all.push_back(v4);
+    vector<string> g2 = {
+        "0001010",
+        "0100011",
+        "0101010",
+        "0110011",
+        "1010111",
+        "1110000"
+    };
+    vector<int> a2 = {0,1,2,9,10,11,18,25,24,31,38,39,40,41};
 
-    // UltimateSort s;
-    // correct = 0;
+    vector<string> g3 = {
+        "0111100010000001",
+        "0000001010110110",
+        "0000110000010000"
+    };
+    vector<int> a3 = {0,16,17,18,19,20,21,5,6,7,23,39,40,41,25,9,10,11,12,28,44,45,46,47};
 
-    // cout << "TESTING QUICK SORT\n";
-    // for(int i = 0; i < all.size(); i++) {
-    //     vector<double> rv = s.quick_sort(all[i]);
-    //     vector<double> rv_sorted = all[i];
-    //     sort(rv_sorted.begin(), rv_sorted.end());
-    //     if(rv_sorted == rv) {
-    //         cout << "Test " << i << "/5 passed.\n";
-    //         correct++;
-    //     }
-    //     else cout << "Test " << i << "/5 FAILED.\n";
-    // }
-    // cout << "\n";
+    vector<string> g4 = {
+        "01111111",
+        "00111111",
+        "10011111",
+        "11001111",
+        "11100111",
+        "11110011",
+        "11111001",
+        "11111100"
+    };
+    vector<int> a4 = {0,8,9,17,18,26,27,35,36,44,45,53,54,62,63};
 
-    // cout << "TESTING MERGE SORT\n";
-    // for(int i = 0; i < all.size(); i++) {
-    //     vector<double> rv = s.merge_sort(all[i]);
-    //     vector<double> rv_sorted = all[i];
-    //     sort(rv_sorted.begin(), rv_sorted.end());
-    //     if(rv_sorted == rv) {
-    //         cout << "Test " << i << "/5 passed.\n";
-    //         correct++;
-    //     }
-    //     else cout << "Test " << i << "/5 FAILED.\n";
-    // }
-    // cout << "\n";
+    vector< vector<string> > all_g;
+    all_g.push_back(g0);
+    all_g.push_back(g1);
+    all_g.push_back(g2);
+    all_g.push_back(g3);
+    all_g.push_back(g4);
 
-    // cout << "TESTING BUBBLE SORT\n";
-    // for(int i = 0; i < all.size(); i++) {
-    //     vector<double> rv = s.bubble_sort(all[i]);
-    //     vector<double> rv_sorted = all[i];
-    //     sort(rv_sorted.begin(), rv_sorted.end());
-    //     if(rv_sorted == rv) {
-    //         cout << "Test " << i << "/5 passed.\n";
-    //         correct++;
-    //     }
-    //     else cout << "Test " << i << "/5 FAILED.\n";
-    // }
-    // cout << "\n";
+    vector< vector<int> > all_a;
+    all_a.push_back(a0);
+    all_a.push_back(a1);
+    all_a.push_back(a2);
+    all_a.push_back(a3);
+    all_a.push_back(a4);
 
-    // cout << "TESTING INSERTION SORT\n";
-    // for(int i = 0; i < all.size(); i++) {
-    //     vector<double> rv = s.insertion_sort(all[i]);
-    //     vector<double> rv_sorted = all[i];
-    //     sort(rv_sorted.begin(), rv_sorted.end());
-    //     if(rv_sorted == rv) {
-    //         cout << "Test " << i << "/5 passed.\n";
-    //         correct++;
-    //     }
-    //     else cout << "Test " << i << "/5 FAILED.\n";
-    // }
-    // cout << "\n";
+    UltimatePathFinder p;
+    correct = 0;
 
-    // cout << "TESTING SELECTION SORT\n";
-    // for(int i = 0; i < all.size(); i++) {
-    //     vector<double> rv = s.selection_sort(all[i]);
-    //     vector<double> rv_sorted = all[i];
-    //     sort(rv_sorted.begin(), rv_sorted.end());
-    //     if(rv_sorted == rv) {
-    //         cout << "Test " << i << "/5 passed.\n";
-    //         correct++;
-    //     }
-    //     else cout << "Test " << i << "/5 FAILED.\n";
-    // }
+    cout << "TESTING DFS\n";
+    for(i = 0; i < all_g.size(); i++) {
+        vector<int> result = p.dfs_shortest_path(all_g[i]);
+        if(result == all_a[i] || result.size() == all_a[i].size()) {
+            cout << "Test " << i + 1 << "/5 passed.\n";
+            correct++;
+        }
+        else cout << "Test " << i + 1 << "/5 FAILED.\n";
+    }
+    cout << '\n';
+
+    cout << "TESTING BFS\n";
+    for(i = 0; i < all_g.size(); i++) {
+        vector<int> result = p.bfs_shortest_path(all_g[i]);
+        if(result == all_a[i] || result.size() == all_a[i].size()) {
+            cout << "Test " << i + 1 << "/5 passed.\n";
+            correct++;
+        }
+        else cout << "Test " << i + 1 << "/5 FAILED.\n";
+    }
+    cout << '\n';
+
+    cout << "TESTING DIJKSTRA'S\n";
+    for(i = 0; i < all_g.size(); i++) {
+        vector<int> result = p.dijkstra_shortest_path(all_g[i]);
+        if(result == all_a[i] || result.size() == all_a[i].size()) {
+            cout << "Test " << i + 1 << "/5 passed.\n";
+            correct++;
+        }
+        else cout << "Test " << i + 1 << "/5 FAILED.\n";
+    }
 
     cout << "\n";
     cout << "You got " << correct << "/25 problems correct.\n";
-
 }

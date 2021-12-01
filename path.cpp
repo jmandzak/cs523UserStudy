@@ -28,6 +28,9 @@
     You may use additional helper functions or classes should you so choose, but you may not make 
     modifications to the provided class
 
+    You may assume that node 0 and node N-1 are ALWAYS 0, and that there is ALWAYS a possible path from 0 to N-1.
+    A valid movement is up, down, left, or right. You may NOT travel diagonally.
+
 */
 
 #include <vector>
