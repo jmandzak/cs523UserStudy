@@ -1,5 +1,5 @@
-a.out: main.cpp sort.cpp
-	g++ -g main.cpp
+a.out: main.cpp path.cpp
+	g++ -g -o test main.cpp
 
 clean:
-	rm a.out
+	rm test
